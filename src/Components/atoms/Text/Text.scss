@@ -17,6 +17,14 @@
     font-size: 15px;
     color: $secondary-text;
 }
+
+.shorten-text{
+        width: 10px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
 /*
 Variants- 
 heading

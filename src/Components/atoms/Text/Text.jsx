@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Text.scss"
-export default function Text({children,variant="normal",className}) {
+export default function Text({children,variant="normal",className,shortenText=false}) {
   let variantStyle = "normal-text";
   if(variant==="heading"){
     variantStyle="heading-text";
@@ -8,10 +8,9 @@ export default function Text({children,variant="normal",className}) {
   if(variant==="secondary"){
     variantStyle="secondary-text";
   }
-  if(variant)
   return (
     <>
-        <span className={`text ${variantStyle} ${className}`}>
+        <span className={`text ${variantStyle} ${shortenText && "shorten-text"} ${className}`}>
             {children}
         </span>
     </>

@@ -1,11 +1,23 @@
 @import "../../../scss/variables";
+.table-section{
+    margin:35px auto;
+}
 .table{
+    border-radius: 4px;
     background-color: $defaultColor;
     width: 100%;
-    .table-header{
+    border:1px solid $borderColor;
+    .table-row{
         padding: 12px;
-        .table-header-item{
-
-        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $borderColor;
+      
     }
+    .table-header-item{
+            
+    }
+
+   
 }

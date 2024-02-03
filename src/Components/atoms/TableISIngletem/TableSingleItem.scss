@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: $secondaryColor;
+    padding: 6px 16px 6px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    .video-btn-text{
+        color: #363B4A;
+        font-size: 13px;
+    }
+}
+.date{
+    font-size: 13px;
+    color: #767B8A;
+}
+.creator{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

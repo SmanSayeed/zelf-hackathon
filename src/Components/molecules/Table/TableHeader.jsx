@@ -5,9 +5,9 @@ import Text from '../../atoms/Text'
 export default function TableHeader() {
   return (
     <>
-<div className='table-header'>
+<div className='table-row'>
     {
-        tableItems.map((item,index)=>{
+        tableItems.map((item,index)=>(
             <React.Fragment key={index}>
                 <div className="table-header-item">
                     <Text variant="secondary">
@@ -15,7 +15,7 @@ export default function TableHeader() {
                     </Text>
                 </div>
             </React.Fragment>
-        })
+        ))
     }
 </div>
     </>

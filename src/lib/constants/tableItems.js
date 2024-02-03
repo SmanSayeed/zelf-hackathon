@@ -4,10 +4,6 @@ export const tableItems = [
         sort:false
     },
     {
-        title:"Date",
-        sort:false
-    },
-    {
         title:"Video",
         sort:false
     },
