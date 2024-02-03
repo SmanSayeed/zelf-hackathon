@@ -13,7 +13,9 @@ import Platform from "../../atoms/TableISIngletem/Platform";
 import NumericalViews from "../../atoms/TableISIngletem/NumericalViews";
 import Button from "../../atoms/Button";
 import SingleItem from "./SingleItem";
+import Modal from "../../atoms/Modal/Modal";
 export default function TableItem({ data }) {
+  const [openModal,setOpenModal] = useState(false)
   console.log("data - ", data);
   const { content, creator } = data;
   const {
@@ -39,8 +41,16 @@ export default function TableItem({ data }) {
     creator_img: profile_picture_url,
   });
 
+
+const viewModal = () => {
+  // alert("viewed");
+  setOpenModal(true)
+}
   return (
     <>
+    {
+      openModal && <Modal openModal={openModal} closeModal={setOpenModal} />
+    }
       <div className="table-row">
         <SingleItem>
           <Date data={dataItem.date} />
@@ -69,8 +79,8 @@ export default function TableItem({ data }) {
           <NumericalViews />
         </SingleItem>
 
-        <SingleItem>
-          <Button className="table-btn">View Post</Button>
+        <SingleItem >
+          <Button className="table-btn" onClick={viewModal}>View Post</Button>
         </SingleItem>
 
 
