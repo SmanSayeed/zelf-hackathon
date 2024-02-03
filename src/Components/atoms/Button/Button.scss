@@ -1,0 +1,20 @@
+
+@import "../../../scss/_variables.scss";
+.btn{
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.btn-primary{
+    background-color: $primaryColor;
+    padding: 10px 20px;
+    color: $defaultColor;
+    border-radius: 2px;
+    font-size: 14px;
+}
+.btn-default{
+    color: $primaryColor;
+    font-size: 15px;
+}

@@ -1,0 +1,15 @@
+@import '../../../index.scss';
+.logo{
+    font-family: "Suisse Int'l Medium";
+    font-size: 18px;
+    font-weight: 600;
+}
+.normal-logo{
+    color:$dark;
+}
+.gradient-logo{
+    font-size: 18px;
+    background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

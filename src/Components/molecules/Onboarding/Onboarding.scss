@@ -1,0 +1,70 @@
+@import "../../../scss/variables";
+.onboarding{
+    width: 1056px;
+    border-radius: 8px;
+    display: flex;
+    margin:83px auto;
+    background-color: $defaultColor;
+    .onboarding-left{
+        background: rgb(115,3,251);
+        background: radial-gradient(circle, rgba(115,3,251,1) 0%, rgba(115,3,251,0.7008053221288515) 100%);
+        background-image: url('../../../assets/images/onboarding-left.png');
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px 0px 0px 8px;
+      
+    }
+    .onboarding-right{
+        background-color: $defaultColor;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 111px 80px;
+        gap: 70px;
+        .auth-section{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+        }
+        .checkbox-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+        .continue-btn{
+            width: 100%;
+        }
+        .onboarding-footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+    }
+
+}
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.checkbox-round:checked {
+    border:5px solid $primaryColor;
+}
