@@ -15,5 +15,7 @@ export function stringShortener(str,len=10){
     for(let i=0;i<len;i++){
         newStr+=str[i]
     }
-    return newStr+"...";
+    let res = newStr;
+    newStr="";
+    return res+"...";
 }

@@ -4,9 +4,7 @@ import { env } from '../../../lib/config/configEnv';
 import TableItem from './TableItem';
 export default function TableBody() {
   const [data,setData] = useState([]);
-  const [page,setPage] = useState(null);
-  const [next,setNext] = useState(null);
-  const [prev,setPrev] = useState(null);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,12 +12,11 @@ export default function TableBody() {
       const resData = await res.json();
       if(Object.keys(resData).length){
         console.log(resData)
-        setData(resData.data);
-        setPage(resData.page);
-        setNext(resData.next);
-        if(page>1){
-          setPrev(page-1);
+        const arr = [];
+        for(let i=0;i<9;i++){
+          arr.push(resData.data[i])
         }
+        setData(arr);
       }  
     }
     fetchData() 

@@ -22,4 +22,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    gap: 5px;
+    .creator-img{
+        width: 30px;
+    }
 }

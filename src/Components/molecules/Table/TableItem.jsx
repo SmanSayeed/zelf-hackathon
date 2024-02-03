@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState,useId } from "react";
+import React, { useState, useId } from "react";
 import "./Table.scss";
-import { convertTimeStamp } from "../../../lib/helpers/helpers";
+import {
+  convertTimeStamp,
+  stringShortener,
+} from "../../../lib/helpers/helpers";
 import Date from "../../atoms/TableISIngletem/Date";
 import Video from "../../atoms/TableISIngletem/Video";
 import Creator from "../../atoms/TableISIngletem/Creator";
 import Platform from "../../atoms/TableISIngletem/Platform";
 import NumericalViews from "../../atoms/TableISIngletem/NumericalViews";
 import Button from "../../atoms/Button";
+import SingleItem from "./SingleItem";
 export default function TableItem({ data }) {
-   
   console.log("data - ", data);
   const { content, creator } = data;
   const {
@@ -18,37 +21,60 @@ export default function TableItem({ data }) {
     external_url,
     comments,
     creator_active_content_count,
-    title
+    title,
   } = content;
 
-  const {username,profile_picture_url,followers,id}=creator;
+  const { username, profile_picture_url, followers, id } = creator;
   const [dataItem, setDataItem] = useState({
     date: timestamp,
     video: title,
-    creator: null,
+    creator: username,
     platform: null,
     total_views: null,
     total_engagement: null,
     engagement_rate: null,
     actions: null,
-    id:null,
-    link:external_url
-});
+    id: null,
+    link: external_url,
+    creator_img: profile_picture_url,
+  });
 
   return (
     <>
-        <div className="table-row">
-             <Date data={dataItem.date}/>
-             <Video data={dataItem.video} link={dataItem.external_url} />
-             <Creator/>
-             <Platform/>
-             <NumericalViews/>
-             <NumericalViews/>
-             <NumericalViews/>
-             <Button variant="primary">
-                View Post
-             </Button>
-        </div>
+      <div className="table-row">
+        <SingleItem>
+          <Date data={dataItem.date} />
+        </SingleItem>
+
+        <SingleItem>
+          <Video data={dataItem.video} link={dataItem.external_url} />
+        </SingleItem>
+
+        <SingleItem>
+          <Creator
+            data={stringShortener(dataItem.creator)}
+            img={dataItem.creator_img}
+          />
+        </SingleItem>
+
+        <SingleItem>
+          <NumericalViews />
+        </SingleItem>
+
+        <SingleItem>
+          <NumericalViews />
+        </SingleItem>
+
+        <SingleItem>
+          <NumericalViews />
+        </SingleItem>
+
+        <SingleItem>
+          <Button className="table-btn">View Post</Button>
+        </SingleItem>
+
+
+      </div>
     </>
-   )
+  );
 }
